@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #2e2e2e 0%, #000000 100%);
+}
+
+.calculator {
+    width: 320px;
+    background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+    max-width: 90%;
+    margin: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.display {
+    background-color: transparent;
+    color: white;
+    font-size: 48px;
+    text-align: right;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-weight: 300;
+    transition: all 0.1s ease-out;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: #333;
+    transition: background-color 0.1s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+}
+
+.btn.gray {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+.btn.gray:active {
+    background-color: #bfbfbf;
+}
+
+.btn.orange {
+    background-color: #ff9500;
+}
+
+.btn.orange:active {
+    background-color: #cc7a00;
+}
+
+.btn.zero {
+    grid-column: span 2;
+    border-radius: 30px;
+    justify-content: flex-start;
+    padding-left: 25px;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.display-animated {
+    animation: fadeInScale 0.15s ease-out;
+}
